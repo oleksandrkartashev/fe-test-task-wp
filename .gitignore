@@ -1,0 +1,16 @@
+wp-content/uploads/
+wp-content/cache/
+wp-content/backups/
+wp-content/upgrade/
+
+.DS_Store
+Thumbs.db
+
+*.log
+
+.idea/
+.vscode/
+
+.env
+.htaccess
+wp-config.php

@@ -1,0 +1,238 @@
+@import '../abstracts/_mixins';
+@import '../abstracts/_breakpoints';
+
+.popup-subscribe {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-semi-transparent-black);
+    justify-content: center;
+    align-items: center;
+    font-family: 'Murs Gothic', sans-serif;
+    &-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        border: none;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity .3s ease-in-out;
+        svg {
+            fill: var(--color-white);
+            @include respond-to('sm') {
+                fill: var(--color-dark-gray);
+            }
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &-container {
+        position: relative;
+        background-color: var(--color-white);
+        max-width: 296px;
+        width: 100%;
+        @include respond-to('sm') {
+            max-width: 786px;
+            max-height: 386px;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+    &-image {
+        max-height: 250px;
+        object-fit: cover;
+        @include respond-to('sm') {
+            align-self: flex-start;
+            max-width: 50%;
+            flex-basis: 50%;
+            width: 50%;
+            max-height: none;
+            object-fit: initial;
+        }
+    }
+    &-step {
+        display: none;
+        flex-wrap: wrap;
+        flex-direction: column;
+        background-position-x: center;
+        background-size: 50% auto;
+        @include respond-to('sm') {
+            flex-wrap: nowrap;
+            flex-direction: row;
+            justify-content: flex-end;
+            height: 100%;
+        }
+        &.step-1 {
+            display: flex;
+        }
+    }
+    &-content {
+        padding: 24px 16px;
+        @include respond-to('sm') {
+            padding: 68px 48px 43px;
+            max-width: 50%;
+            flex-basis: 50%;
+            width: 50%;
+        }
+        .step-2 & {
+            @include respond-to('sm') {
+                padding-top: 40px;
+            }
+        }
+    }
+    &-text {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: var(--color-light-text);
+        margin-bottom: 2px;
+        @include respond-to('sm') {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+        }
+        .step-2 & {
+            margin-bottom: 6px;
+        }
+    }
+    &-title {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        text-align: left;
+        color: var(--color-dark-text);
+        margin: 0 0 24px;
+        @include respond-to('sm') {
+            font-size: 35px;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin: 0 0 36px;
+        }
+        .step-2 & {
+            @include respond-to('sm') {
+                margin-bottom: 27px;
+            }
+        }
+    }
+    div:has(> .popup-subscribe-input)  {
+        position: relative;
+        &:before {
+            position: absolute;
+            content: "";
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent url('../img/svg/icon-email.svg') no-repeat;
+            background-position-x: center;
+            background-position-y: center;
+            background-size: 24px 24px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+    &-input {
+        display: block;
+        width: 100%;
+        height: 46px;
+        padding: 0 16px 0 42px;
+        gap: 8px;
+        border-radius: 4px;
+        border: 1px solid var(--color-light-gray);
+        letter-spacing: -0.01em;
+        margin-bottom: 12px;
+        color: var(--color-light-text);
+        line-height: normal;
+        @include placeholder {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: normal;
+            color: var(--color-light-text);
+        }
+    }
+    &-submit {
+        display: block;
+        width: 100%;
+        padding: 18px 15px;
+        font-family: 'Trim', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 21.6px;
+        letter-spacing: -0.02em;
+        text-align: center;
+        background: var(--color-black);
+        transition: background-color .3s ease-in-out, color .3s ease-in-out;
+        color: var(--color-white);
+        margin-bottom: 8px;
+        &:hover {
+            color: var(--color-white);
+            background: var(--color-blue);
+        }
+    }
+    &-policy {
+        font-size: 9px;
+        font-weight: 400;
+        line-height: 10.8px;
+        letter-spacing: 0.04em;
+        text-align: left;
+        color: var(--color-light-text);
+        a {
+            color: inherit;
+            &:hover {
+                color: inherit;
+                text-decoration: underline;
+            }
+        }
+    }
+    &-discount {
+        counter-reset: counter;
+    }
+    .discount-steps {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px 30px;
+        li {
+            counter-increment: counter;
+            position: relative;
+            padding-left: 45px;
+            width: calc(50% - 15px);
+            flex-basis: calc(50% - 15px);
+            max-width: calc(50% - 15px);
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 16.8px;
+            letter-spacing: -0.02em;
+            &:before {
+                content: counter(counter) '';
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                border: 1px solid var(--color-lighter-gray);
+                font-family: 'Trim', sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 19.2px;
+                letter-spacing: -0.01em;
+            }
+        }
+    }
+}

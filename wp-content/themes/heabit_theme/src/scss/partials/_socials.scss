@@ -1,0 +1,17 @@
+@import '../abstracts/variables';
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+    svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--black);
+    }
+}
