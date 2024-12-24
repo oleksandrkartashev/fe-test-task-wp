@@ -42,16 +42,19 @@ To implement this task, I used the Starter Theme for WordPress from [Underscores
 
 ## How to run FE build
 
-Project uses Webpack 5, to run, simply do this in the repository root: `npm install` and `npm run dev`. The last command is to start a development server that watches for file changes and automatically reloads the application.
+Project uses Webpack 5, to run, simply do this in the repository root: `npm install` and `npm run dev`.
 
-## Other tasks
+## Webpack tasks
 
 ```bash
 
 # Install dependencies
 npm install
 
-# build for production with minification
+# Start a development server that watches for file changes
+npm run dev
+
+# build for production
 npm run build
 
 ```
