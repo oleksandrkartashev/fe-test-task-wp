@@ -12,6 +12,27 @@ Implement: mobile and desktop views for the 1st and 2nd steps of the popup.
 It is not mandatory, but it would be a plus if the subscription data is transmitted via API to a subscription service. This can be any service.
 - After completing the task, provide access to the admin panel for review (link, username, and password).
 
+## Screenshots
+Desktop, step 1
+
+![Screenshot 2024-12-24 at 10 57 57](https://github.com/user-attachments/assets/ef78c295-4934-45e1-927d-8132d1e84176)
+
+Desktop, step 2
+
+![image](https://github.com/user-attachments/assets/21b0c4c0-831f-40f7-abec-b4efe93bf899)
+
+Mobile, step 1
+
+![image](https://github.com/user-attachments/assets/b662251e-d75f-4f38-a948-9ece51cd369a)
+
+Mobile, step 2
+
+![image](https://github.com/user-attachments/assets/1e8dccbc-10ee-4a70-b4ec-30b2828904a8)
+
+
+
+
+
 ## Technologies Used
 
 - HTML (PHP)
