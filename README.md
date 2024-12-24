@@ -29,9 +29,9 @@ Mobile, step 2
 
 ![image](https://github.com/user-attachments/assets/1e8dccbc-10ee-4a70-b4ec-30b2828904a8)
 
+## Implementation
 
-
-
+To implement this task, I used the Starter Theme for WordPress from [Underscores](https://underscores.me/). The email addresses of users who filled out the form are saved in the created CPT "Subscribers". The popup itself was implemented as a shortcode and is added to the page using `[subscription_popup]`. All the WordPress logic required for this task is written inside the `functions.php` file. The JS and styles needed for the popup display are located inside the `src` folder.
 
 ## Technologies Used
 
