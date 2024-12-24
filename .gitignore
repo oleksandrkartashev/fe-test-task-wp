@@ -2,6 +2,7 @@ wp-content/uploads/
 wp-content/cache/
 wp-content/backups/
 wp-content/upgrade/
+node_modules
 
 .DS_Store
 Thumbs.db
